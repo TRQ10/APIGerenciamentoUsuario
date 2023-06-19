@@ -71,3 +71,45 @@ A rota PUT: http://localhost:8080/teste/updateUser é usada para atualizar as in
    - O campo "perfil" é opcional e pode ser usado para atualizar o perfil do usuário.
    
    Certifique-se de incluir o cabeçalho de autenticação com o token JWT válido do usuário que é gerado apos o mesmo se logar com sucesso.
+
+# Rota para Gerar OTP (One-Time Password)
+
+A rota GET: http://localhost:8080/teste/generateOTP é usada para gerar um OTP (One-Time Password) aleatório. Um OTP é uma senha de uso único usada para autenticação ou validação.
+
+Para utilizar essa rota, siga as etapas abaixo:
+
+   1. Envie uma solicitação GET para a URL mencionada.
+   2. A API irá gerar um OTP aleatório com 7 caracteres.
+   3. O OTP gerado será retornado na resposta da API.
+
+   Exemplo de resposta bem-sucedida:
+   
+   <img src="https://github.com/TRQ10/rdm.images/blob/main/otp.png" alt="Demonstração">
+   
+   O código OTP gerado pode ser utilizado de acordo com as necessidades do seu projeto, como validação de telefone, autenticação de dois fatores, entre outros.
+   
+# Rota para Verificar OTP (One-Time Password)
+   A rota GET: http://localhost:8080/teste/verifyOTP é usada para verificar se um OTP (One-Time Password) fornecido corresponde ao OTP gerado anteriormente.
+
+Para utilizar essa rota, siga as etapas abaixo:
+
+   1. Envie uma solicitação GET para a URL mencionada.
+   2. Inclua o parâmetro code na query da solicitação, contendo o valor do OTP a ser verificado.
+   3. A API irá comparar o valor fornecido com o OTP gerado anteriormente.
+   4. Se o valor fornecido corresponder ao OTP gerado, a resposta da API será um status 200 indicando sucesso na verificação.
+   5. Caso contrário, a resposta da API será um status 400 indicando OTP inválida.
+   
+   Exemplo de solicitação:
+   
+   <img src="https://github.com/TRQ10/rdm.images/blob/main/urlEXP.png" alt="Demonstração">
+   
+   Exemplo de resposta bem-sucedida:
+   
+   <img src="https://github.com/TRQ10/rdm.images/blob/main/yesV.png" alt="Demonstração">
+   
+   Exemplo de resposta de erro:
+   
+   <img src="https://github.com/TRQ10/rdm.images/blob/main/noV.png" alt="Demonstração">
+  
+   Certifique-se de utilizar o valor correto do OTP para verificar sua validade.
+   
