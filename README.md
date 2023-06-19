@@ -44,3 +44,11 @@ A rota POST: http://localhost:8080/teste/login é usada para realizar o login de
    
    - O campo "usuario" deve conter o nome de usuário registrado.
    - O campo "senha" deve conter a senha correspondente ao usuário.
+
+# Uso da Rota de Consulta de Usuário
+
+A rota GET: http://localhost:8080/teste/user/:usuario é usada para consultar informações de um usuário específico. Substitua :usuario pelo nome de usuário desejado. Siga as etapas abaixo:
+
+   1. Envie uma solicitação GET para a URL mencionada, substituindo :usuario pelo nome de usuário desejado.
+   2. A rota buscará o usuário no banco de dados com base no nome de usuário fornecido.
+   3. Se o usuário for encontrado, suas informações serão retornadas na resposta, excluindo a senha. Além disso, a resposta incluirá um campo booleano tokenGenerated, indicando se um token de verificação foi gerado para o usuário.
