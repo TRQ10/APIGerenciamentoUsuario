@@ -56,7 +56,7 @@ A rota GET: http://localhost:8080/teste/user/:usuario é usada para consultar in
 
    1. Envie uma solicitação GET para a URL mencionada, substituindo :usuario pelo nome de usuário desejado.
    2. A rota buscará o usuário no banco de dados com base no nome de usuário fornecido.
-   3. Se o usuário for encontrado, suas informações serão retornadas na resposta, excluindo a senha. Além disso, a resposta incluirá um campo booleano tokenGenerated, indicando se um token de verificação foi gerado para o usuário.
+   3. Se o usuário for encontrado, suas informações serão retornadas na resposta, excluindo a senha. Além      disso, a resposta incluirá um campo booleano tokenGenerated, indicando se um token de verificação foi        gerado para o usuário.
 
 # Uso da Rota de Atualização de Usuário
 
@@ -112,4 +112,24 @@ Para utilizar essa rota, siga as etapas abaixo:
    <img src="https://github.com/TRQ10/rdm.images/blob/main/noV.png" alt="Demonstração">
   
    Certifique-se de utilizar o valor correto do OTP para verificar sua validade.
+ 
+ # Rota para Criar Sessão de Redefinição de Senha
+ 
+ A rota GET: http://localhost:8080/teste/createResetSession é usada para criar uma sessão de redefinição de senha quando a OTP (One-Time Password) é válida.
+
+Para utilizar essa rota, siga as etapas abaixo:
+
+  1. Envie uma solicitação GET para a URL mencionada.
+  2. A API verificará se a sessão de redefinição de senha foi ativada com sucesso com base na validade da     OTP.
+  3. Se a sessão de redefinição de senha estiver ativada, a resposta da API será um status 201 indicando que   o acesso a essa rota está permitido.
+  4. Caso contrário, se a sessão expirou ou a OTP não foi verificada com sucesso, a resposta da API será um   status 440 indicando que a sessão expirou.
+
+   Exemplo de resposta bem-sucedida:
    
+   <img src="https://github.com/TRQ10/rdm.images/blob/main/TrueFlag.png" alt="Demonstração">
+   
+   Exemplo de resposta de erro:
+   
+   <img src="https://github.com/TRQ10/rdm.images/blob/main/expirada.png" alt="Demonstração">
+   
+   Certifique-se de ter verificado com sucesso a OTP antes de acessar essa rota.
