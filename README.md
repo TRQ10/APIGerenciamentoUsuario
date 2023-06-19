@@ -1,7 +1,5 @@
 # APIGerenciamentoUsuario
 
-# Configuração do Ambiente
-
 Antes de iniciar o servidor da API, certifique-se de ter instalado as dependências necessárias. Para fazer isso, siga as etapas abaixo:
 
    1. Certifique-se de ter o Node.js instalado em seu ambiente de desenvolvimento.
