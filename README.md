@@ -88,7 +88,8 @@ Para utilizar essa rota, siga as etapas abaixo:
    
    O código OTP gerado pode ser utilizado de acordo com as necessidades do seu projeto, como validação de telefone, autenticação de dois fatores, entre outros.
    
-# Rota para Verificar OTP (One-Time Password)
+ # Rota para Verificar OTP (One-Time Password)
+
    A rota GET: http://localhost:8080/teste/verifyOTP é usada para verificar se um OTP (One-Time Password) fornecido corresponde ao OTP gerado anteriormente.
 
 Para utilizar essa rota, siga as etapas abaixo:
@@ -113,9 +114,9 @@ Para utilizar essa rota, siga as etapas abaixo:
   
    Certifique-se de utilizar o valor correto do OTP para verificar sua validade.
  
- # Rota para Criar Sessão de Redefinição de Senha
+# Rota para Criar Sessão de Redefinição de Senha
  
- A rota GET: http://localhost:8080/teste/createResetSession é usada para criar uma sessão de redefinição de senha quando a OTP (One-Time Password) é válida.
+A rota GET: http://localhost:8080/teste/createResetSession é usada para criar uma sessão de redefinição de  senha quando a OTP (One-Time Password) é válida.
 
 Para utilizar essa rota, siga as etapas abaixo:
 
@@ -133,3 +134,36 @@ Para utilizar essa rota, siga as etapas abaixo:
    <img src="https://github.com/TRQ10/rdm.images/blob/main/expirada.png" alt="Demonstração">
    
    Certifique-se de ter verificado com sucesso a OTP antes de acessar essa rota.
+
+# Rota para Redefinir Senha
+
+A rota PUT: http://localhost:8080/teste/resetPassword é usada para redefinir a senha do usuário quando a sessão de redefinição de senha é válida.
+
+Para utilizar essa rota, siga as etapas abaixo:
+
+   1. Envie uma solicitação PUT para a URL mencionada.
+   2. Certifique-se de que a sessão de redefinição de senha esteja válida. Caso contrário, a resposta da API será um status 440 indicando que a sessão expirou.
+   3. No corpo da solicitação, inclua os seguintes parâmetros:
+       - usuario: o nome de usuário do usuário.
+       - senha: a nova senha a ser definida.
+   4. A API verificará se o usuário existe com o nome de usuário fornecido. Se o usuário não for encontrado, a resposta da API será um status 404 indicando que o usuário não foi encontrado.
+   5. A senha fornecida será criptografada e atualizada no banco de dados para o usuário correspondente.
+   6. A sessão de redefinição de senha será encerrada após a redefinição bem-sucedida.
+   7. A resposta da API será um status 201 indicando que a senha foi redefinida com sucesso.
+   
+   Exemplo de corpo da solicitação:
+   
+   <img src="https://github.com/TRQ10/rdm.images/blob/main/updateSenha.png" alt="Demonstração">
+   
+   Exemplo de resposta bem-sucedida:
+   
+   <img src="https://github.com/TRQ10/rdm.images/blob/main/sucessoSenha.png" alt="Demonstração">
+   
+   Exemplo de resposta de erro:
+   
+   <img src="https://github.com/TRQ10/rdm.images/blob/main/FallhaSenha.png" alt="Demonstração">
+ 
+Contribuição
+
+Sinta-se à vontade para contribuir com o desenvolvimento desta API. Você pode enviar pull requests e relatar problemas para ajudar a melhorar o projeto. 
+   
