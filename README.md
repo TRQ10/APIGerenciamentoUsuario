@@ -27,8 +27,11 @@ JWT_SECRET = 'sua encriptografia'
 Configurações de envio de email
 
 EMAIL = "seu email do outlook"
+
 SENHA = "sua senha do outlook"
+
 EGMAIL = "seu email do google"
+
 SGMAIL = "sua senha"
 
 Certifique-se de substituir os valores acima pelos seus próprios. Essas configurações são necessárias para o funcionamento adequado da autenticação e do envio de emails após o registro do usuário.
